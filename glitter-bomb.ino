@@ -19,12 +19,7 @@ decode_results results;
 const int rs = 12, en = 9, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
-// Global variables
-bool glitterBombHit = false;
-int numberOfPlayers = 0;
-int currentPlayer = 0;
-int someScore = 0;
-int glitterBomb = 30;
+// Only show the instructions on the first boot-up, not each time we loop / play a game
 bool skipInstructions = false;
 
 // Make some custom characters
