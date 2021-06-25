@@ -1,2 +1,3 @@
-# glitter-bomb
-Mark Rober engineering project
+Glitter Bomb
+============
+Mark Rober engineering project.
