@@ -1,3 +1,3 @@
 Glitter Bomb
 ============
-Mark Rober engineering project.
+Second project in the Mark Rober engineering course.
