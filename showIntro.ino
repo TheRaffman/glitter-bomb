@@ -7,6 +7,6 @@ void showIntro()
   lcd.setCursor(0, 1);
   lcd.write(byte(0));
   lcd.print(" GLITTER BOMB ");
-  lcd.write(byte(0));
+  lcd.write(byte(0)); 
   delay(2000);
 }

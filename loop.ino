@@ -6,7 +6,6 @@ void loop()
   int packagesTakenThisTurn = 0;    // Packages taken by the player on their turn
   int playerScore[9];               // Store score for each player
   int totalRunningScore = 0;        // The running total score
-  int glitterBomb = random(20,60);  // Which package is the GLITTER BOMB!
 
   // Drain any stray IR inputs 
   clearIrInputs();
@@ -27,6 +26,8 @@ void loop()
   {
     playerScore[i] = 0;
   }
+  int glitterBomb = random(numberOfPlayers * 20, numberOfPlayers * 60);  // Which package is the GLITTER BOMB!
+
   // Confirm number of players
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -57,6 +58,7 @@ void loop()
     // Player has taken the glitter bomb
     if (totalRunningScore >= glitterBomb)
     {
+      playerThatGotGlittered = currentPlayer -1;
       lcd.setCursor(0, 1);
       lcd.print("Hit Bomb: ");
       lcd.print(String(glitterBomb));
