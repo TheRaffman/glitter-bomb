@@ -23,7 +23,10 @@ void loop()
 
   // Get the number of players this time around (are people joining / leaving)
   numberOfPlayers = getPlayerCount();
-
+  for (int i = 0; i < numberOfPlayers; i++)
+  {
+    playerScore[i] = 0;
+  }
   // Confirm number of players
   lcd.clear();
   lcd.setCursor(0, 0);
