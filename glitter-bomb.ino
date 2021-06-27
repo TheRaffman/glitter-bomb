@@ -15,17 +15,24 @@
 IRrecv irrecv(RECEIVER);
 decode_results results;
 
+const int GREEN_STRIP = 6;
+const int RED_STRIP = 9;
+const int BLUE_STRIP = 10;
+
+// Flash those lights!
+int brightness = 255;
+int gBright = 0;
+int rBright = 0;
+int bBright = 0;
+int fadeSpeed = 10;
+
 // Initialize the LCD
-const int rs = 12, en = 9, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+const int rs = 12, en = 8, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
-// Global variables
-bool glitterBombHit = false;
-int numberOfPlayers = 0;
-int currentPlayer = 0;
-int someScore = 0;
-int glitterBomb = 30;
+// Only show the instructions on the first boot-up, not each time we loop / play a game
 bool skipInstructions = false;
+int playerThatGotGlittered = 0;
 
 // Make some custom characters
 byte heart[8] = {
